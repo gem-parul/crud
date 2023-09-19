@@ -19,6 +19,7 @@ export class ViewUserComponent implements OnInit {
     'manager',
     'action',
   ];
+  isEditing=false;
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -27,6 +28,9 @@ export class ViewUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserList();
+  }
+  navigateToAddUser(pageName: string): void {
+    this.router.navigate([`${pageName}`]);
   }
   getUserList() {
     this._userService.getUserList().subscribe({
@@ -59,19 +63,8 @@ export class ViewUserComponent implements OnInit {
       }
     })
   }
-  editForm(data: any) {
-
-
-    // const userId = data.id;
-    // this._userService.getUserById(userId).subscribe({
-    //   next: (user) => {
-    //     this.router.navigate(['/add-user'], {
-    //       state: { userData:user },
-    //     });
-    //   },
-    //   error: (err:any) => {
-    //     console.log(err);
-    //   },
-    // });
+  editUser(id: number) {
+    this.router.navigate(['/add-user/', id]);
   }
+
 }

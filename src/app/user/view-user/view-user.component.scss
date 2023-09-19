@@ -6,4 +6,14 @@
   mat-form-field{
     width: 100%;
   }
+  .add-user-btn{
+    padding: auto;
+    margin-bottom: 20px;
+  }
+  .add-user-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 16px;
+  }
 }

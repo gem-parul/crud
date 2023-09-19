@@ -5,17 +5,21 @@ import { ViewUserComponent } from './user/view-user/view-user.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:ViewUserComponent,
+    path: '',
+    component: ViewUserComponent,
   },
   {
-    path:'add-user',
-    component:AddUserComponent,
+    path: 'add-user',
+    component: AddUserComponent,
+  },
+  {
+    path: 'add-user/:id',
+    component: AddUserComponent
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

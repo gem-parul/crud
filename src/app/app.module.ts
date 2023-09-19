@@ -18,6 +18,7 @@ import {MatTableModule} from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatSnackBar, MatSnackBarRef, MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {MatSnackBar, MatSnackBarRef, MatSnackBarModule} from '@angular/material/
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
+    MatCardModule,
 
   ],
   providers: [],
