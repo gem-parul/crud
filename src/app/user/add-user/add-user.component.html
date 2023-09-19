@@ -1,0 +1,80 @@
+<div class="container">
+  <div></div>
+  <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+  <div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" placeholder="Ex. Parul" formControlName="firstName" (keypress)="onlyAlphabet($event)">
+        <mat-error *ngIf="userForm.get('firstName')?.hasError('required') && userForm.get('firstName')?.touched">
+          First Name is required.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('firstName')?.hasError('pattern') && userForm.get('firstName')?.touched">
+          First Name should contain only alphabets.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" placeholder="Ex. Sahni" formControlName="lastName" (keypress)="onlyAlphabet($event)">
+        <mat-error *ngIf="userForm.get('lastName')?.hasError('required') && userForm.get('lastName')?.touched">
+          Last Name is required.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('lastName')?.hasError('pattern') && userForm.get('lastName')?.touched">
+          Last Name should contain only alphabets.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Code</mat-label>
+        <input matInput type="text" placeholder="Ex. GSI GI 890" formControlName="code">
+        <mat-error *ngIf="userForm.get('code')?.hasError('required') && userForm.get('code')?.touched">
+          Code is required.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('code')?.hasError('pattern') && userForm.get('code')?.touched">
+          Code should contain alphanumeric value.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Designation</mat-label>
+        <input matInput type="text" placeholder="Ex. Technical Trainee" formControlName="designation">
+        <mat-error *ngIf="userForm.get('designation')?.hasError('required') && userForm.get('designation')?.touched">
+          Designation is required.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('designation')?.hasError('pattern') && userForm.get('designation')?.touched">
+          Designation should contain alphanumeric.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Ex. test@gmail.com" formControlName="email">
+        <mat-error *ngIf="userForm.get('email')?.hasError('required') && userForm.get('email')?.touched">
+          Email is required.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('email')?.hasError('pattern') && userForm.get('email')?.touched">
+          Email is invalid.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Manager</mat-label>
+        <input matInput type="text" placeholder="Eg. Rakesh Singh" formControlName="manager">
+        <mat-error *ngIf="userForm.get('manager')?.hasError('required') && userForm.get('manager')?.touched">
+          Manager is required.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('manager')?.hasError('pattern') && userForm.get('manager')?.touched">
+          Manager should contain only alphabets.
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div>
+    <button mat-raised-button class="primary" type="button" (click)="navigateToView()">Cancel</button>
+    <button mat-raised-button class="primary" type="submit" [disabled]="userForm.invalid">Submit</button>
+    <!-- <button mat-raised-button label="Cancel"></button>
+    <button mat-raised-button label="Submit"></button> -->
+  </div>
+</form>
+</div>

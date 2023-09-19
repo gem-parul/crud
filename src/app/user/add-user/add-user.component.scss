@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+.row{
+  display: flex;
+  gap: 10px;
+  mat-form-field{
+    width: 100%;
+    padding: 10px;
+  }
+}
+  div {
+    margin-bottom: 15px; // Add vertical spacing between div elements
+  }
+
+  mat-form-field {
+    width: 100%; // Optionally, set the width to 100%
+    max-width: 300px; // Adjust the max-width as needed
+  }
+
+  button.primary {
+    margin-right: 10px; // Add spacing between buttons
+  }
+}
